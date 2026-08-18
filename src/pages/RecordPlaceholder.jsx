@@ -49,7 +49,7 @@ function RecordPlaceholder() {
               </span>
 
               <span className="brand-sub">
-                Sexual Offence Conviction Records
+                Sexual Offence Conviction Register
               </span>
             </Link>
 
