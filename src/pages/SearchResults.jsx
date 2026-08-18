@@ -243,11 +243,11 @@ function SearchResults() {
             aria-label="SVGOR homepage"
           >
             <span className="brand-main">
-              SVGOR
+              SVGSR
             </span>
 
             <span className="brand-sub">
-              Sexual Offence Conviction Records
+              Sexual Offence Conviction Register
             </span>
           </Link>
 
@@ -547,7 +547,7 @@ function SearchResults() {
 
             <div>
               <strong>
-                SVGOR
+                SVGSR
               </strong>
 
               <span>

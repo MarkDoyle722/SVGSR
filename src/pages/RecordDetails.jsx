@@ -35,7 +35,7 @@ function PageHeader() {
     <header className="header">
       <div className="header-inner">
         <Link to="/search" className="header-control" aria-label="Back to search results"><BackIcon /></Link>
-        <Link className="brand" to="/" aria-label="SVGOR home"><span className="brand-main">SVGOR</span><span className="brand-sub">Sexual Offence Conviction Records</span></Link>
+        <Link className="brand" to="/" aria-label="SVGOR home"><span className="brand-main">SVGSR</span><span className="brand-sub">Sexual Offence Conviction Records</span></Link>
         <div />
       </div>
       <div className="national-line" aria-hidden="true"><span /><span /><span /></div>
@@ -138,7 +138,7 @@ function RecordDetails() {
         <section className="record-responsible"><div className="container"><div className="record-responsible-box"><div><span>Important notice</span><h2>Do not use this information to threaten or harass.</h2></div><p>Public-record information does not authorise vigilantism, threats, stalking, intimidation, harassment or unlawful discrimination. Records may also be corrected, updated or removed when authoritative information changes.</p></div></div></section>
       </main>
 
-      <footer className="footer"><div className="container footer-main"><div className="footer-brand"><img src="/images/rsvgpf-emblem.svg" alt="" aria-hidden="true" /><div><strong>SVGOR</strong><span>Sexual Offence Conviction Records</span></div></div><nav className="footer-links" aria-label="Footer navigation"><Link to="/">Home</Link><Link to="/search">Search</Link><Link to="/">Methodology</Link><Link to="/">Corrections</Link></nav></div><div className="container footer-bottom"><p>Independent service — not an official Government of Saint Vincent and the Grenadines or RSVGPF website.</p><p>© 2026 SVGOR</p></div></footer>
+      <footer className="footer"><div className="container footer-main"><div className="footer-brand"><img src="/images/rsvgpf-emblem.svg" alt="" aria-hidden="true" /><div><strong>SVGSR</strong><span>Sexual Offence Conviction Records</span></div></div><nav className="footer-links" aria-label="Footer navigation"><Link to="/">Home</Link><Link to="/search">Search</Link><Link to="/">Methodology</Link><Link to="/">Corrections</Link></nav></div><div className="container footer-bottom"><p>Independent service — not an official Government of Saint Vincent and the Grenadines or RSVGPF website.</p><p>© 2026 SVGOR</p></div></footer>
     </div>
   );
 }

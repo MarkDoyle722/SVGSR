@@ -1690,3 +1690,90 @@ select:focus-visible {
 
   flex: 0 0 auto;
 }
+
+/* ============================================
+   MOBILE BRAND / HEADER FIX
+============================================ */
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  text-decoration: none;
+}
+
+.brand-main {
+  display: block;
+}
+
+.brand-sub {
+  display: block;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .header-inner {
+    min-height: 76px;
+  }
+
+  .brand {
+    min-width: 0;
+    flex: 1;
+
+    padding: 0 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+  }
+
+  .brand-main {
+    display: block;
+
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+
+  .brand-sub {
+    display: block !important;
+
+    max-width: 220px;
+
+    color: rgba(255, 255, 255, 0.76);
+
+    font-size: 10px;
+    line-height: 1.25;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+
+    white-space: normal;
+    text-align: center;
+  }
+
+  .header-control {
+    flex: 0 0 44px;
+  }
+}
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 380px) {
+  .brand-main {
+    font-size: 22px;
+  }
+
+  .brand-sub {
+    max-width: 185px;
+
+    font-size: 9px;
+  }
+}
