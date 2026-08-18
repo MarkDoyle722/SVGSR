@@ -800,25 +800,25 @@ function RecordDetails() {
                 <div>
                   <span>Important notice</span>
                   <h2>
-                    Use this information lawfully and
-                    responsibly.
+                    Use This Information Lawfully and
+                    Responsibly.
                   </h2>
                 </div>
               </div>
 
               <div>
                 <p>
-                  Public-record information does not
-                  authorise vigilantism, threats,
-                  stalking, intimidation, harassment,
-                  doxxing or unlawful discrimination.
+                  This information is provided for lawful public-information
+  purposes only. It must not be used to threaten, harass, stalk,
+  intimidate, shame, target, dox or unlawfully discriminate
+  against any person.
                 </p>
 
                 <Link
                   to="/privacy-responsible-use"
                   className="record-responsible-link"
                 >
-                  Read responsible-use policy
+                  Read Responsible Use Policy
                   <ArrowIcon />
                 </Link>
               </div>
