@@ -15,6 +15,25 @@ const parishes = [
   "Saint Patrick",
 ];
 
+const publicSearchCount = Number(
+  import.meta.env.VITE_PUBLIC_SEARCH_COUNT || 0,
+);
+
+const searchCountSince = new Intl.DateTimeFormat("en-GB", {
+  day: "2-digit",
+  month: "2-digit",
+  year: "numeric",
+}).format(new Date(new Date().getFullYear(), 0, 1));
+
+function formatSearchCount(value) {
+  if (!Number.isFinite(value) || value < 0) {
+    return "0";
+  }
+
+  return new Intl.NumberFormat("en-GB").format(value);
+}
+
+
 function MenuIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -231,7 +250,7 @@ function App() {
             </div>
 
             <div className="hero-content">
-              <p className="section-label">
+              <p className="section-label hero-label">
                 Public record information
               </p>
 
@@ -260,6 +279,18 @@ function App() {
                 >
                   How this service works
                 </a>
+              </div>
+
+              <div
+                className="hero-search-stats"
+                aria-label={`${formatSearchCount(
+                  publicSearchCount,
+                )} searches since ${searchCountSince}`}
+              >
+                <strong>
+                  {formatSearchCount(publicSearchCount)}
+                </strong>{" "}
+                searches since {searchCountSince}
               </div>
 
               <p className="independent-note">
