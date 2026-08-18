@@ -281,18 +281,6 @@ function App() {
                 </a>
               </div>
 
-              <div
-                className="hero-search-stats"
-                aria-label={`${formatSearchCount(
-                  publicSearchCount,
-                )} searches since ${searchCountSince}`}
-              >
-                <strong>
-                  {formatSearchCount(publicSearchCount)}
-                </strong>{" "}
-                searches since {searchCountSince}
-              </div>
-
               <p className="independent-note">
                 Independent public-record service. Not
                 an official Government or Police
