@@ -13,7 +13,7 @@ function BackIcon() {
         d="M19 12H5M10 7l-5 5 5 5"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="1.9"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -43,7 +43,7 @@ function LocationIcon() {
         d="M12 21s6-5.4 6-11a6 6 0 1 0-12 0c0 5.6 6 11 6 11Z"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.6"
+        strokeWidth="1.7"
       />
       <circle
         cx="12"
@@ -51,7 +51,7 @@ function LocationIcon() {
         r="2"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.6"
+        strokeWidth="1.7"
       />
     </svg>
   );
@@ -64,14 +64,14 @@ function DocumentIcon() {
         d="M7 3h7l4 4v14H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.6"
+        strokeWidth="1.7"
         strokeLinejoin="round"
       />
       <path
         d="M14 3v5h5M9 12h6M9 16h6"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.6"
+        strokeWidth="1.7"
         strokeLinecap="round"
       />
     </svg>
@@ -85,7 +85,7 @@ function CalendarIcon() {
         d="M6 3v3M18 3v3M4 9h16M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.6"
+        strokeWidth="1.7"
         strokeLinecap="round"
       />
     </svg>
@@ -99,14 +99,14 @@ function ShieldIcon() {
         d="M12 3 19 6v5c0 4.8-2.9 8.1-7 10-4.1-1.9-7-5.2-7-10V6l7-3Z"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.6"
+        strokeWidth="1.7"
         strokeLinejoin="round"
       />
       <path
         d="M9.5 12.2 11.2 14l3.7-4"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.6"
+        strokeWidth="1.7"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -141,8 +141,8 @@ function PageHeader() {
           <BackIcon />
         </Link>
 
-        <Link className="brand" to="/" aria-label="SVGSR home">
-          <span className="brand-main">SVGSR</span>
+        <Link className="brand" to="/" aria-label="SVGOR home">
+          <span className="brand-main">SVGOR</span>
           <span className="brand-sub">
             Sexual Offence Conviction Records
           </span>
@@ -184,7 +184,7 @@ function ProfilePhoto({ record }) {
   return (
     <div className="profile-photo-placeholder" aria-hidden="true">
       <span>{initials || "—"}</span>
-      <small>No photo</small>
+      <small>No photograph</small>
     </div>
   );
 }
@@ -254,9 +254,7 @@ function RecordDetails() {
 
         <main className="record-state-page">
           <div className="container record-state-card">
-            <p className="section-label">
-              Record unavailable
-            </p>
+            <p className="section-label">Record unavailable</p>
 
             <h1>
               {error
@@ -291,6 +289,7 @@ function RecordDetails() {
       <PageHeader />
 
       <main className="record-page">
+        {/* SAFETY NOTICE */}
         <section
           className={`record-alert ${
             record.demo ? "record-alert-demo" : ""
@@ -301,7 +300,7 @@ function RecordDetails() {
               !
             </div>
 
-            <div>
+            <div className="record-alert-copy">
               <strong>
                 {record.demo
                   ? "Demonstration profile."
@@ -326,6 +325,7 @@ function RecordDetails() {
           </div>
         </section>
 
+        {/* PROFILE SUMMARY */}
         <section className="profile-section">
           <div className="container">
             <div className="profile-shell">
@@ -350,7 +350,7 @@ function RecordDetails() {
 
                   {record.demo && (
                     <span className="profile-demo-label">
-                      Demo
+                      Demo record
                     </span>
                   )}
                 </div>
@@ -361,21 +361,16 @@ function RecordDetails() {
 
                 <div className="profile-location">
                   <LocationIcon />
-
                   <span>
                     {record.location || "Location not listed"}
-                    {record.parish
-                      ? `, ${record.parish}`
-                      : ""}
+                    {record.parish ? `, ${record.parish}` : ""}
                   </span>
                 </div>
 
                 <dl className="profile-facts">
                   <div>
                     <dt>Birth year</dt>
-                    <dd>
-                      {record.birthYear || "Not listed"}
-                    </dd>
+                    <dd>{record.birthYear || "Not listed"}</dd>
                   </div>
 
                   <div>
@@ -424,6 +419,7 @@ function RecordDetails() {
           </div>
         </section>
 
+        {/* RECORD CONTENT */}
         <section className="record-content-section">
           <div className="container record-layout">
             <div className="record-main-column">
@@ -449,60 +445,52 @@ function RecordDetails() {
 
                 {convictions.length ? (
                   <div className="record-entry-list">
-                    {convictions.map(
-                      (conviction, index) => (
-                        <article
-                          className="record-entry"
-                          key={conviction.id}
-                        >
-                          <div className="record-entry-index">
-                            {String(index + 1).padStart(
-                              2,
-                              "0",
-                            )}
-                          </div>
+                    {convictions.map((conviction, index) => (
+                      <article
+                        className="record-entry"
+                        key={conviction.id}
+                      >
+                        <div className="record-entry-index">
+                          {String(index + 1).padStart(2, "0")}
+                        </div>
 
-                          <div className="record-entry-body">
-                            <h3>
-                              {conviction.offence}
-                            </h3>
+                        <div className="record-entry-body">
+                          <h3>{conviction.offence}</h3>
 
-                            <dl className="detail-grid">
-                              <div>
-                                <dt>Conviction date</dt>
-                                <dd>
-                                  {formatDate(
-                                    conviction.convictionDate,
-                                  )}
-                                </dd>
-                              </div>
+                          <dl className="detail-grid">
+                            <div>
+                              <dt>Conviction date</dt>
+                              <dd>
+                                {formatDate(
+                                  conviction.convictionDate,
+                                )}
+                              </dd>
+                            </div>
 
-                              <div>
-                                <dt>Court</dt>
-                                <dd>
-                                  {conviction.court ||
-                                    "Not listed"}
-                                </dd>
-                              </div>
+                            <div>
+                              <dt>Court</dt>
+                              <dd>
+                                {conviction.court || "Not listed"}
+                              </dd>
+                            </div>
 
-                              <div>
-                                <dt>Case reference</dt>
-                                <dd>
-                                  {conviction.caseReference ||
-                                    "Not listed"}
-                                </dd>
-                              </div>
-                            </dl>
+                            <div>
+                              <dt>Case reference</dt>
+                              <dd>
+                                {conviction.caseReference ||
+                                  "Not listed"}
+                              </dd>
+                            </div>
+                          </dl>
 
-                            {conviction.notes && (
-                              <p className="record-note">
-                                {conviction.notes}
-                              </p>
-                            )}
-                          </div>
-                        </article>
-                      ),
-                    )}
+                          {conviction.notes && (
+                            <p className="record-note">
+                              {conviction.notes}
+                            </p>
+                          )}
+                        </div>
+                      </article>
+                    ))}
                   </div>
                 ) : (
                   <p className="record-empty-copy">
@@ -554,8 +542,7 @@ function RecordDetails() {
                           <div>
                             <dt>Court</dt>
                             <dd>
-                              {sentence.court ||
-                                "Not listed"}
+                              {sentence.court || "Not listed"}
                             </dd>
                           </div>
                         </dl>
@@ -612,17 +599,14 @@ function RecordDetails() {
                           </h3>
 
                           <p>
-                            {location.type ||
-                              "General location"}
+                            {location.type || "General location"}
                           </p>
                         </div>
 
                         <div className="location-reviewed">
                           <span>Last verified</span>
                           <strong>
-                            {formatDate(
-                              location.lastVerified,
-                            )}
+                            {formatDate(location.lastVerified)}
                           </strong>
                         </div>
                       </article>
@@ -636,10 +620,9 @@ function RecordDetails() {
                 )}
 
                 <p className="location-policy">
-                  Exact residential addresses should
-                  not be displayed unless publication
-                  is specifically authorised under the
-                  applicable framework.
+                  Exact residential addresses should not be
+                  displayed unless publication is specifically
+                  authorised under the applicable framework.
                 </p>
               </section>
 
@@ -683,17 +666,14 @@ function RecordDetails() {
                             <div>
                               <dt>Published</dt>
                               <dd>
-                                {formatDate(
-                                  source.publishedDate,
-                                )}
+                                {formatDate(source.publishedDate)}
                               </dd>
                             </div>
 
                             <div>
                               <dt>Reference</dt>
                               <dd>
-                                {source.reference ||
-                                  "Not listed"}
+                                {source.reference || "Not listed"}
                               </dd>
                             </div>
                           </dl>
@@ -740,7 +720,6 @@ function RecordDetails() {
                     className="profile-status-dot"
                     aria-hidden="true"
                   />
-
                   <strong>{record.status}</strong>
                 </div>
 
@@ -811,6 +790,7 @@ function RecordDetails() {
           </div>
         </section>
 
+        {/* RESPONSIBLE USE */}
         <section className="record-responsible">
           <div className="container">
             <div className="record-responsible-box">
@@ -857,7 +837,7 @@ function RecordDetails() {
             />
 
             <div>
-              <strong>SVGSR</strong>
+              <strong>SVGOR</strong>
               <span>
                 Sexual Offence Conviction Records
               </span>
@@ -886,7 +866,7 @@ function RecordDetails() {
             Grenadines or RSVGPF website.
           </p>
 
-          <p>© 2026 SVGSR</p>
+          <p>© 2026 SVGOR</p>
         </div>
       </footer>
     </div>
