@@ -658,8 +658,8 @@ function App() {
                 </p>
 
                 <h2>
-                  Use Public-Record Information
-                  Responsibly.
+                    Use This Website Lawfully and Responsibly.
+
                 </h2>
               </div>
 
@@ -679,8 +679,8 @@ function App() {
                   className="responsible-more-link"
                 >
                   <span>
-                    Read privacy & responsible-use
-                    policy
+                    Read Privacy & Responsible Use
+                    Policy
                   </span>
 
                   <ArrowIcon />

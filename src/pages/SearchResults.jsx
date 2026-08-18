@@ -194,7 +194,7 @@ function SearchResults() {
 
         if (!cancelled) {
           setError(
-            "We could not load records from the database. Check your Supabase setup and try again.",
+            "We could not load records from the database.",
           );
         }
       } finally {
@@ -519,16 +519,14 @@ function SearchResults() {
 
             <div className="results-information">
               <div className="information-heading">
-                About search results
+                Note
               </div>
 
               <p>
-                Only records permitted by the database
-                security policies are returned to the
-                browser. Draft, review, removed,
-                expired, and future-dated records are
-                excluded by Supabase Row Level
-                Security.
+                 Search results show only records that are currently approved
+    for publication. Records may be updated, corrected, reviewed
+    or removed when new authoritative information becomes
+    available.
               </p>
             </div>
           </div>
